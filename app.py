@@ -23,11 +23,6 @@ def fonts(filename):
     return static_file(filename, root='static/fonts')
 
 @route('/')
-def index():
-    return template('index')
-
-
-@route('/login')
 def login():
     return template('login')
 
@@ -39,12 +34,12 @@ def check_login(username, password):
     return False
 
 
-@route('/login', method='POST')
+@route('/', method='POST')
 def acao_login():
     username = request.forms.get('username')
     password = request.forms.get('password')
 
-    return template('index', sucesso=check_login(username,password), nome=username)
+    return template('verificalogin', sucesso=check_login(username,password), nome=username)
 
 @error(404)
 def error404(error):
