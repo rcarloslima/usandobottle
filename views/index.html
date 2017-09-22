@@ -1,0 +1,12 @@
+% rebase('base.html', title='Tela inicial')
+
+
+% if sucesso:
+	<div class="alert alert-success">
+  		<strong>Sucesso!</strong> Olá {{ nome.capitalize() }}, seja bem-vindo(a)!
+	</div>
+% else:
+	<div class="alert alert-danger">
+  		<strong>Erro!</strong> Tente novamente fazer o login.
+	</div>
+% end
